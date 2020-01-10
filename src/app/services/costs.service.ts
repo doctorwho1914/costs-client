@@ -14,4 +14,8 @@ export class CostsService {
   add(data: any) {
     return this.http.post<any>(`/api/cost`, data).toPromise();
   }
+
+  remove(id: number) {
+    return this.http.delete<any>(`/api/cost/` + id, {}).toPromise();
+  }
 }

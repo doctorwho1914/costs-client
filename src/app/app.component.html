@@ -4,7 +4,7 @@
       <label for="category">Категория</label>
       <select class="form-control"
               id="category"
-              formControlName="category"
+              formControlName="categoryId"
               value=""
               required>
         <option value="1">Продукты</option>
@@ -39,7 +39,8 @@
 
   <div class="row p-3">
     <div class="col-12 px-0 py-3 border-bottom border-primary" *ngFor="let e of costs">
-      Категория: {{e.category}} <br/>
+      <span class="remove" (click)="remove(e.id)">Удалить</span>
+      Категория: {{e.category.name}} <br/>
       Сумма: {{e.value}} грн<br/>
       Дата: {{e.createdAt | date:'dd.MM.yyyy hh:mm'}} <br/>
     </div>

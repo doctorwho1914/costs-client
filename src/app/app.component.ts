@@ -16,7 +16,7 @@ export class AppComponent {
     private costsService: CostsService
   ) {
     this.addCostForm = new FormGroup({
-      category: new FormControl(''),
+      categoryId: new FormControl(''),
       value: new FormControl(''),
       description: new FormControl(''),
     });
@@ -31,9 +31,20 @@ export class AppComponent {
       });
   }
 
-  save() {
-    if (confirm('Добавить курс?')) {
-      this.costsService.add(this.addCostForm.value);
+  save(): void {
+    if (confirm('Добавить трату?')) {
+      this.costsService.add(this.addCostForm.value)
+        .then(e => {
+          this.load();
+        });
+    }
+  }
+  remove(id: number): void {
+    if (confirm('Точно удалить?')) {
+      this.costsService.remove(id)
+        .then(e => {
+          this.load();
+        });
     }
   }
 }
