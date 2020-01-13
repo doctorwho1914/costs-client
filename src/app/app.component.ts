@@ -22,6 +22,7 @@ export class AppComponent {
       categoryId: new FormControl(''),
       value: new FormControl(''),
       description: new FormControl(''),
+      createdAt: new FormControl(''),
     });
     this.load();
   }
