@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CostsService} from './services/costs.service';
+import {CategoryService} from './services/category.service';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +12,11 @@ export class AppComponent {
   title = 'costs-client';
   addCostForm: FormGroup;
   costs: any[];
+  categories: any[];
 
   constructor(
-    private costsService: CostsService
+    private costsService: CostsService,
+    private categoryService: CategoryService,
   ) {
     this.addCostForm = new FormGroup({
       categoryId: new FormControl(''),
@@ -28,6 +31,11 @@ export class AppComponent {
       .then(data => {
         console.log(data);
         this.costs = data;
+      });
+    this.categoryService.list()
+      .then(data => {
+        console.log(data);
+        this.categories = data;
       });
   }
 

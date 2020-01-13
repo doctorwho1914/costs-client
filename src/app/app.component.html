@@ -7,12 +7,7 @@
               formControlName="categoryId"
               value=""
               required>
-        <option value="1">Продукты</option>
-        <option value="2">Вода</option>
-        <option value="3">Развлечения</option>
-        <option value="4">Одежда</option>
-        <option value="5">Транспорт</option>
-        <option value="6">Кредиты</option>
+        <option *ngFor="let c of categories" value="{{c.id}}">{{c.name}}</option>
       </select>
     </div>
     <div class="form-group">
