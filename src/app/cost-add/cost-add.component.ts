@@ -28,11 +28,6 @@ export class CostAddComponent {
   }
 
   load() {
-    this.costsService.list()
-      .then(data => {
-        console.log(data);
-        this.costs = data;
-      });
     this.categoryService.list()
       .then(data => {
         console.log(data);

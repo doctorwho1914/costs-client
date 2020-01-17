@@ -7,8 +7,8 @@ export class CostsService {
   constructor(private http: HttpClient) {
   }
 
-  list() {
-    return this.http.get<any>(`/api/cost`).toPromise();
+  list(options?: any) {
+    return this.http.get<any>(`/api/cost`, {params: options}).toPromise();
   }
 
   add(data: any) {
