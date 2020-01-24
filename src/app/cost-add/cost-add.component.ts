@@ -48,13 +48,12 @@ export class CostAddComponent {
       })
     ])
       .then(data => {
-        console.log(data);
         this.statistic = data[0].map((e, index) => {
           return {
             id: e.id,
             name: e.name,
-            monthSum: e.sum,
-            weekSum: data[1][index].sum,
+            monthSum: e.sum || 0,
+            weekSum: data[1][index].sum || 0,
           };
         });
       });
