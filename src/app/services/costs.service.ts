@@ -11,6 +11,10 @@ export class CostsService {
     return this.http.get<any>(`/api/cost`, {params: options}).toPromise();
   }
 
+  getStatistic(options?: any) {
+    return this.http.get<any>(`/api/cost/statistics`, {params: options}).toPromise();
+  }
+
   add(data: any) {
     return this.http.post<any>(`/api/cost`, data).toPromise();
   }

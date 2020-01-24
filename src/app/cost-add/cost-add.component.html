@@ -43,4 +43,16 @@
     <button type="submit" class="btn btn-primary" style="width: 100%">Сохранить</button>
   </form>
 
+  <div class="row px-3">
+
+    <div class="col-12 px-0 py-3 border-bottom border-secondary">
+      Категория:
+      <span style="float: right">Неделя/Месяц</span>
+    </div>
+    <div class="col-12 px-0 py-3 border-bottom border-primary" *ngFor="let e of statistic">
+      {{e.name}}
+      <span style="float: right">{{e.weekSum}}/{{e.monthSum}} грн</span>
+    </div>
+  </div>
+
 </div>
